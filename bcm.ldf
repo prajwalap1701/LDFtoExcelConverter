@@ -1,0 +1,766 @@
+/* ************************************************************************** */ 
+    /*                                  VINFAST                                   */ 
+    /*  Description: LIN Description file                                         */ 
+    /*  Configuration: VinFast                                                    */ 
+    /*  Bus: LIN_1_V10_00                                                         */ 
+    /*  Created: VinFast                                                  */ 
+    /*                                                                            */ 
+    /* ************************************************************************** */ 
+
+LIN_description_file;
+LIN_protocol_version = "2.1";
+LIN_language_version = "2.1";
+LIN_speed = 19.2 kbps;
+
+Nodes { 
+  Master: BCM, 5 ms, 0.1 ms;
+  Slaves: SCM, BAS, RLS ;
+}
+
+Signals  {
+   RS_L_WiperSpeed: 3, 0, RLS, BCM;
+   RS_F_LightSensor: 2, 0, RLS, BCM;
+   RS_F_RainSensor: 2, 0, RLS, BCM;
+   RS_F_Communication: 1, 0, RLS, BCM;
+   RS_F_Voltage: 2, 0, RLS, BCM;
+   RS_St_LampReq: 2, 0, RLS, BCM;
+   RS_St_CurrentRain: 3, 0, RLS, BCM;
+   RS_St_SplashCmd: 2, 0, RLS, BCM;
+   RS_Sol_L: 8, 0, RLS, BCM;
+   RS_Sol_R: 8, 0, RLS, BCM;
+   RS_TunnelDetection: 1, 0, RLS, BCM;
+   RS_F_OpticalInitialization: 1, 0, RLS, BCM;
+   RS_F_Temperature: 1, 0, RLS, BCM;
+   RS_St_LightSensorActive: 1, 0, RLS, BCM;
+   RS_F_HUD_Sensor: 1, 0, RLS, BCM;
+   RS_HUD_illuminance: 16, 0, RLS, BCM;
+   ERR_ST_INTL_00_SZL_LIN: 2, 0, SCM, BCM;
+   ERR_ST_INTL_01_SZL_LIN: 2, 0, SCM, BCM;
+   ERR_ST_INTL_02_SZL_LIN: 2, 0, SCM, BCM;
+   ERR_ST_INTL_03_SZL_LIN: 2, 0, SCM, BCM;
+   ERR_ST_INTL_04_SZL_LIN: 2, 0, SCM, BCM;
+   ERR_ST_DRS_00_SZL_LIN: 2, 0, SCM, BCM;
+   ERR_ST_DRS_01_SZL_LIN: 2, 0, SCM, BCM;
+   ERR_ST_DRS_02_SZL_LIN: 2, 0, SCM, BCM;
+   ERR_ST_SWS_00_SZL_LIN: 2, 0, SCM, BCM;
+   ERR_ST_SWS_01_SZL_LIN: 2, 0, SCM, BCM;
+   ERR_ST_KRL_00_SZL_LIN: 2, 0, SCM, BCM;
+   ERR_ST_AIC_00_SZL_LIN: 2, 0, SCM, BCM;
+   ERR_ST_KRL_01_SZL_LIN: 2, 0, SCM, BCM;
+   ERR_ST_KL_SZL_LIN: 2, 0, SCM, BCM;
+   ERR_ST_DIM_SZL_LIN: 2, 0, SCM, BCM;
+   OP_WISW_SZL_LIN: 8, 0, SCM, BCM;
+   OP_WIPO_SZL_LIN: 3, 0, SCM, BCM;
+   COMM_ERR_SZL_LIN: 1, 0, SCM, BCM;
+   OP_COLS_SZL_LIN: 8, 0, SCM, BCM;
+   ALIV_WISW_SZL_LIN: 4, 0, SCM, BCM;
+   NOD_ERR_SZL_LIN: 2, 0, SCM, BCM;
+   ST_KL_SZL_LIN: 4, 15, BCM, BAS, SCM;
+   CTR_LED_STWH_SZL_LIN: 2, 3, BCM, SCM;
+   CTR_LED_WI_SZL_LIN: 2, 3, BCM, SCM;
+   CTR_WI_FN_SZL_LIN: 4, 15, BCM, SCM;
+   BC_Button: 2, 0, SCM, BCM;
+   WiperSensitivityInterval: 3, 0, BCM, RLS;
+   WiperFront: 3, 0, BCM, RLS;
+   WashMode_FW: 2, 0, BCM, RLS;
+   STAT_Terminal: 3, 0, BCM, RLS;
+   Wiper_Parked_Low: 1, 0, BCM, RLS;
+   Temperature: 8, 0, BCM, RLS;
+   VehicleSpeed: 16, 0, BCM, RLS;
+   U_BATT: 14, 0, BAS, BCM;
+   Reserved: 2, 0, BAS, BCM;
+   I_BATT_High: 16, 0, BAS, BCM;
+   I_BATT_LOW: 8, 0, BAS, BCM;
+   IBATT_QUIESCENT: 8, 0, BAS, BCM;
+   T_BATT: 8, 0, BAS, BCM;
+   Resp_Error: 1, 0, BAS, BCM;
+   FLAG_INCONSTENCY: 1, 0, BAS, BCM;
+   EBS_error: 1, 0, BAS, BCM;
+   FLAG_DISCONNECT: 1, 0, BAS, BCM;
+   Reserved1: 4, 0, BAS, BCM;
+   SOC: 8, 255, BAS, BCM;
+   SOH_SUL: 8, 255, BAS, BCM;
+   SOFV_StopEnable: 8, 15, BAS, BCM;
+   SOFV_Restart: 8, 15, BAS, BCM;
+   SOH_LAM: 8, 127, BAS, BCM;
+   SOH_COR: 8, 15, BAS, BCM;
+   SOC_STATE: 2, 3, BAS, BCM;
+   SOH_SUL_STATE: 2, 3, BAS, BCM;
+   SOFV_StopEnableState: 2, 3, BAS, BCM;
+   SOFV_RestartState: 2, 3, BAS, BCM;
+   SOH_LAM_STATE: 2, 3, BAS, BCM;
+   SOH_COR_STATE: 2, 3, BAS, BCM;
+   Q_Charge: 16, 8191, BAS, BCM;
+   Q_Discharge: 16, 8191, BAS, BCM;
+}
+
+Diagnostic_signals { 
+    MasterReqB0: 8, 0 ; 
+    MasterReqB1: 8, 0 ; 
+    MasterReqB2: 8, 0 ; 
+    MasterReqB3: 8, 0 ; 
+    MasterReqB4: 8, 0 ; 
+    MasterReqB5: 8, 0 ; 
+    MasterReqB6: 8, 0 ; 
+    MasterReqB7: 8, 0 ; 
+    SlaveRespB0: 8, 0 ; 
+    SlaveRespB1: 8, 0 ; 
+    SlaveRespB2: 8, 0 ; 
+    SlaveRespB3: 8, 0 ; 
+    SlaveRespB4: 8, 0 ; 
+    SlaveRespB5: 8, 0 ; 
+    SlaveRespB6: 8, 0 ; 
+    SlaveRespB7: 8, 0 ; 
+    } 
+
+Frames  {
+   CTR_SZL_LIN: 34, BCM, 2 {
+           ST_KL_SZL_LIN, 0 ;
+           CTR_LED_STWH_SZL_LIN, 4 ;
+           CTR_LED_WI_SZL_LIN, 6 ;
+           CTR_WI_FN_SZL_LIN, 12 ;
+   }
+   BCM_MSG: 43, BCM, 7 {
+           WiperSensitivityInterval, 0 ;
+           WiperFront, 3 ;
+           WashMode_FW, 6 ;
+           STAT_Terminal, 8 ;
+           Wiper_Parked_Low, 24 ;
+           Temperature, 25 ;
+           VehicleSpeed, 40 ;
+   }
+   ERR_ST_SZL_LIN: 31, SCM, 8 {
+           ERR_ST_INTL_00_SZL_LIN, 0 ;
+           ERR_ST_INTL_01_SZL_LIN, 2 ;
+           ERR_ST_INTL_02_SZL_LIN, 4 ;
+           ERR_ST_INTL_03_SZL_LIN, 6 ;
+           ERR_ST_INTL_04_SZL_LIN, 8 ;
+           ERR_ST_DRS_00_SZL_LIN, 10 ;
+           ERR_ST_DRS_01_SZL_LIN, 12 ;
+           ERR_ST_DRS_02_SZL_LIN, 14 ;
+           ERR_ST_SWS_00_SZL_LIN, 20 ;
+           ERR_ST_SWS_01_SZL_LIN, 22 ;
+           ERR_ST_KRL_00_SZL_LIN, 24 ;
+           ERR_ST_AIC_00_SZL_LIN, 26 ;
+           ERR_ST_KRL_01_SZL_LIN, 28 ;
+           ERR_ST_KL_SZL_LIN, 40 ;
+           ERR_ST_DIM_SZL_LIN, 42 ;
+   }
+   ST_SZL_LIN: 33, SCM, 8 {
+           OP_WISW_SZL_LIN, 0 ;
+           OP_WIPO_SZL_LIN, 8 ;
+           COMM_ERR_SZL_LIN, 15 ;
+           OP_COLS_SZL_LIN, 16 ;
+           ALIV_WISW_SZL_LIN, 24 ;
+           NOD_ERR_SZL_LIN, 30 ;
+   }
+   BAS_Measured_Data: 52, BAS, 8 {
+           U_BATT, 0 ;
+           Reserved, 14 ;
+           I_BATT_High, 16 ;
+           I_BATT_LOW, 32 ;
+           IBATT_QUIESCENT, 40 ;
+           T_BATT, 48 ;
+           Resp_Error, 56 ;
+           FLAG_INCONSTENCY, 57 ;
+           EBS_error, 58 ;
+           FLAG_DISCONNECT, 59 ;
+           Reserved1, 60 ;
+   }
+   BAS_SOC_information: 53, BAS, 8 {
+           SOC, 0 ;
+           SOH_SUL, 8 ;
+           SOFV_StopEnable, 16 ;
+           SOFV_Restart, 24 ;
+           SOH_LAM, 32 ;
+           SOH_COR, 40 ;
+           SOC_STATE, 50 ;
+           SOH_SUL_STATE, 52 ;
+           SOFV_StopEnableState, 54 ;
+           SOFV_RestartState, 56 ;
+           SOH_LAM_STATE, 58 ;
+           SOH_COR_STATE, 60 ;
+   }
+   BAS_Battery_Data: 54, BAS, 8 {
+           Q_Charge, 0 ;
+           Q_Discharge, 16 ;
+   }
+   RS_SENSOR_01: 14, RLS, 8 {
+           RS_L_WiperSpeed, 0 ;
+           RS_F_LightSensor, 3 ;
+           RS_F_RainSensor, 5 ;
+           RS_F_Communication, 7 ;
+           RS_F_Voltage, 8 ;
+           RS_St_LampReq, 11 ;
+           RS_St_CurrentRain, 13 ;
+           RS_St_SplashCmd, 24 ;
+           RS_Sol_L, 26 ;
+           RS_Sol_R, 34 ;
+           RS_TunnelDetection, 42 ;
+           RS_F_OpticalInitialization, 43 ;
+           RS_F_Temperature, 44 ;
+           RS_St_LightSensorActive, 45 ;
+           RS_F_HUD_Sensor, 46 ;
+           RS_HUD_illuminance, 47 ;
+   }
+   SCM_BC_Button: 35, SCM, 8 {
+           BC_Button, 0 ;
+   }
+}
+
+Diagnostic_frames {
+    MasterReq: 0x3c {
+        MasterReqB0, 0 ;
+        MasterReqB1, 8 ;
+        MasterReqB2, 16 ;
+        MasterReqB3, 24 ;
+        MasterReqB4, 32 ;
+        MasterReqB5, 40 ;
+        MasterReqB6, 48 ;
+        MasterReqB7, 56 ;
+    }
+    SlaveResp: 0x3d {
+        SlaveRespB0, 0 ;
+        SlaveRespB1, 8 ;
+        SlaveRespB2, 16 ;
+        SlaveRespB3, 24 ;
+        SlaveRespB4, 32 ;
+        SlaveRespB5, 40 ;
+        SlaveRespB6, 48 ;
+        SlaveRespB7, 56 ;
+    }
+    }
+
+Node_attributes  {
+    SCM{
+       LIN_protocol = "2.1";
+       configured_NAD = 0x21;
+       initial_NAD = 0x21; 
+       product_id = 0xB, 0x1301, 0; 
+       response_error = COMM_ERR_SZL_LIN;
+       fault_state_signals =  IntTest;
+       P2_min = 150 ms;
+       ST_min = 15 ms;
+N_As_timeout = 1000 ms ;
+    N_Cr_timeout = 1000 ms ;
+       configurable_frames {ERR_ST_SZL_LIN ;
+ST_SZL_LIN ;
+CTR_SZL_LIN;
+BCM_MSG ;
+SCM_BC_Button ;
+ }
+}
+    BAS{
+       LIN_protocol = "2.1";
+       configured_NAD = 0x47;
+       initial_NAD = 0x47; 
+       product_id = 0x2, 0x1400, 0; 
+       response_error = Resp_Error;
+       fault_state_signals =  IntTest;
+       P2_min = 150 ms;
+       ST_min = 15 ms;
+ N_As_timeout = 1000 ms ;
+    N_Cr_timeout = 1000 ms ;
+       configurable_frames {BAS_SOC_information ;
+BAS_Battery_Data ;
+BAS_Measured_Data ;
+CTR_SZL_LIN ;
+ }
+}
+    RLS{
+       LIN_protocol = "2.1";
+       configured_NAD = 0x1B;
+       initial_NAD = 0x1B; 
+       product_id = 0x5, 0x1, 1; 
+       response_error = RS_F_Communication;
+       fault_state_signals =  IntTest;
+       P2_min = 50 ms;
+       ST_min = 0 ms;
+    N_As_timeout = 1000 ms ;
+    N_Cr_timeout = 1000 ms ;
+       configurable_frames {RS_SENSOR_01 ;
+BCM_MSG ;
+ }
+}
+}
+
+Schedule_tables {
+    DIAG {
+        SlaveResp delay 10 ms ;
+        MasterReq delay 10 ms ;
+        }
+    RUN_MAIN {
+        CTR_SZL_LIN delay 10 ms ;
+        BCM_MSG delay 10 ms ;
+        ERR_ST_SZL_LIN delay 10 ms ;
+        ST_SZL_LIN delay 10 ms ;
+        BCM_MSG delay 10 ms ;
+        BAS_Measured_Data delay 10 ms ;
+        BAS_SOC_information delay 10 ms ;
+        BAS_Battery_Data delay 10 ms ;
+        BCM_MSG delay 10 ms ;
+        RS_SENSOR_01 delay 10 ms ;
+        SCM_BC_Button delay 10 ms ;
+        }
+}
+
+Signal_encoding_types {
+RS_L_WiperSpeed_Encoding {
+   logical_value, 0, "OFF" ;
+   logical_value, 1, "Low speed Signal" ;
+   logical_value, 2, "low speed continuous" ;
+   logical_value, 3, "high speed continuous" ;
+   logical_value, 4, "Reserved" ;
+   logical_value, 5, "Reserved" ;
+   logical_value, 6, "Reserved" ;
+   logical_value, 7, "Signal invalid" ;
+}
+RS_F_LightSensor_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "The light sensor error" ;
+   logical_value, 2, "Reserved" ;
+   logical_value, 3, "Signal invalid" ;
+}
+RS_F_RainSensor_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Rain Sensor error" ;
+   logical_value, 2, "Reserved" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+RS_F_Communication_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Communication Error" ;
+}
+RS_F_Voltage_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "high voltage fault" ;
+   logical_value, 2, "low voltage fault" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+RS_St_LampReq_Encoding {
+   logical_value, 0, "Lamp Off" ;
+   logical_value, 1, "Lamp On" ;
+   logical_value, 2, "Reserved" ;
+   logical_value, 3, "Signal invalid" ;
+}
+RS_St_CurrentRain_Encoding {
+   logical_value, 0, "No Rain" ;
+   logical_value, 1, "Level 1 (Light rain)" ;
+   logical_value, 2, "level 2(moderate rain)" ;
+   logical_value, 3, "level 3(heavy rain)" ;
+   logical_value, 4, "Reserved" ;
+   logical_value, 5, "Reserved" ;
+   logical_value, 6, "Reserved" ;
+   logical_value, 7, "Signal Invalid" ;
+}
+RS_St_SplashCmd_Encoding {
+   logical_value, 0, "splash off" ;
+   logical_value, 1, "splash on" ;
+   logical_value, 2, "Reserved" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+RS_Sol_L_Encoding {
+   physical_value, 0, 50, 5.0, 0.0, "W/m^2" ;
+   logical_value, 254, "HW failure solar sensor" ;
+   logical_value, 255, "Signal Invalid" ;
+}
+RS_Sol_R_Encoding {
+   physical_value, 0, 50, 5.0, 0.0, "W/m^2" ;
+   logical_value, 254, "HW failure solar sensor" ;
+   logical_value, 255, "Signal Invalid" ;
+}
+RS_TunnelDetection_Encoding {
+   logical_value, 0, "No Tunnel Detection" ;
+   logical_value, 1, "Tunnel Detection" ;
+}
+RS_F_OpticalInitialization_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Optical Initialization Error" ;
+}
+RS_F_Temperature_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Temperature Error" ;
+}
+RS_St_LightSensorActive_Encoding {
+   logical_value, 0, "Not active" ;
+   logical_value, 1, "Light Sensor actived" ;
+}
+RS_F_HUD_Sensor_Encoding {
+   physical_value, 0, 1, 1.0, 0.0, "cd/m2" ;
+   logical_value, 0, "No error" ;
+   logical_value, 1, "HUD error" ;
+}
+RS_HUD_illuminance_Encoding {
+   physical_value, 0, 10000, 1.0, 0.0, "cd/m2" ;
+   logical_value, 65535, "Invalid" ;
+}
+ERR_ST_INTL_00_SZL_LIN_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error Active" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+ERR_ST_INTL_01_SZL_LIN_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error Active" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+ERR_ST_INTL_02_SZL_LIN_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error Active" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+ERR_ST_INTL_03_SZL_LIN_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error Active" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+ERR_ST_INTL_04_SZL_LIN_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error Active" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+ERR_ST_DRS_00_SZL_LIN_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error Active" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+ERR_ST_DRS_01_SZL_LIN_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error Active" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+ERR_ST_DRS_02_SZL_LIN_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error Active" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+ERR_ST_SWS_00_SZL_LIN_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error Active" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+ERR_ST_SWS_01_SZL_LIN_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error Active" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+ERR_ST_KRL_00_SZL_LIN_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error Active" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+ERR_ST_AIC_00_SZL_LIN_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error Active" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+ERR_ST_KRL_01_SZL_LIN_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error Active" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+ERR_ST_KL_SZL_LIN_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error Active" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+ERR_ST_DIM_SZL_LIN_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error Active" ;
+   logical_value, 3, "Signal Invalid" ;
+}
+OP_WISW_SZL_LIN_Encoding {
+   logical_value, 0, "No action" ;
+   logical_value, 255, "Signal Invalid" ;
+}
+OP_WIPO_SZL_LIN_Encoding {
+   logical_value, 0, "Step 1" ;
+   logical_value, 1, "Step 2" ;
+   logical_value, 2, "Step 3" ;
+   logical_value, 4, "Step 4" ;
+   logical_value, 7, "Signal Invalid" ;
+}
+COMM_ERR_SZL_LIN_Encoding {
+   logical_value, 0, "No error" ;
+   logical_value, 1, "Error active" ;
+}
+OP_COLS_SZL_LIN_Encoding {
+   logical_value, 0, "No action" ;
+   logical_value, 255, "Signal Invalid" ;
+}
+NOD_ERR_SZL_LIN_Encoding {
+   logical_value, 0, "NO error" ;
+   logical_value, 1, "error aktiv" ;
+   logical_value,  2, "error Stat change" ;
+   logical_value, 3, "Signal invalid" ;
+}
+ST_KL_SZL_LIN_Encoding {
+   logical_value, 0, "Init" ;
+   logical_value, 1, "Reserve" ;
+   logical_value, 2, "KL30" ;
+   logical_value, 3, "KL30F-change" ;
+   logical_value, 4, "KL30F-ON" ;
+   logical_value, 5, "KL30B-change" ;
+   logical_value, 6, "KL30B-ON" ;
+   logical_value, 7, "KLR-change" ;
+   logical_value, 8, "KLR-ON" ;
+   logical_value, 9, "KL15-change" ;
+   logical_value, 10, "KL15-ON" ;
+   logical_value, 11, "KL15-delay" ;
+   logical_value, 12, "KL15-change" ;
+   logical_value, 13, "KL15-ON" ;
+   logical_value, 14, "error" ;
+   logical_value, 15, "Signal invalid" ;
+}
+CTR_LED_STWH_SZL_LIN_Encoding {
+   logical_value, 0, "LED OFF" ;
+   logical_value, 1, "LED ON" ;
+   logical_value, 3, "Signal invalid" ;
+}
+CTR_LED_WI_SZL_LIN_Encoding {
+   logical_value, 0, "LED OFF" ;
+   logical_value, 1, "LED ON" ;
+   logical_value, 3, "Signal invalid" ;
+}
+CTR_WI_FN_SZL_LIN_Encoding {
+   logical_value, 0, "No action" ;
+   logical_value, 1, "Intervall/Automatic" ;
+   logical_value, 2, "Step 1" ;
+   logical_value, 3, "Step 2" ;
+   logical_value, 8, "Tipp wipe" ;
+   logical_value, 15, "Signal Invalid" ;
+}
+BC_Button_Encoding {
+   logical_value, 0, "Button not Pressed" ;
+   logical_value, 1, "Short Press" ;
+   logical_value, 2, "Long Press" ;
+   logical_value, 3, "Signal invalid" ;
+}
+WiperSensitivityInterval_Encoding {
+   logical_value, 0, "Reserved" ;
+   logical_value, 1, "Step 1" ;
+   logical_value, 2, "Step 2" ;
+   logical_value, 3, "Step 3" ;
+   logical_value, 4, "Step 4" ;
+   logical_value, 5, "Reserved" ;
+   logical_value, 6, "Reserved" ;
+   logical_value, 7, "Invalid" ;
+}
+WiperFront_Encoding {
+   logical_value, 0, "OFF" ;
+   logical_value, 1, "Mist" ;
+   logical_value, 2, "IntermittentAuto" ;
+   logical_value, 3, "Low Speed" ;
+   logical_value, 4, "High Speed" ;
+   logical_value, 5, "Reserved" ;
+   logical_value, 6, "Reserved" ;
+   logical_value, 7, "Invalid" ;
+}
+WashMode_FW_Encoding {
+   logical_value, 0, "Wash normal OFF" ;
+   logical_value, 1, "Wash normal ON" ;
+   logical_value, 2, "Reserved" ;
+   logical_value, 3, "Invalid" ;
+}
+STAT_Terminal_Encoding {
+   physical_value, 0, 7, 1.0, 0.0, "Bit" ;
+   logical_value, 7, "Signal invalid" ;
+   logical_value, 6, "Reserved" ;
+   logical_value, 5, "Reserved" ;
+   logical_value, 4, "SW Update OTA" ;
+   logical_value, 3, "Engine start (eMotor running)" ;
+   logical_value, 2, "ON (Driver Present)" ;
+   logical_value, 1, "ACC (Park)" ;
+   logical_value, 0, "OFF(Comfort Enable)" ;
+}
+Wiper_Parked_Low_Encoding {
+   logical_value, 0, "else" ;
+   logical_value, 1, "Wiper lever in parking position" ;
+}
+Temperature_Encoding {
+   physical_value, 0, 250, 0.5, -40.0, "Degree C" ;
+}
+VehicleSpeed_Encoding {
+   physical_value, 0, 22400, 0.015625, 0.0, "km/h" ;
+}
+U_BATT_Encoding {
+   physical_value, 0, 15360, 0.0009765625, 3.0, "V" ;
+   logical_value, 16363, "Invalid" ;
+}
+I_BATT_High_Encoding {
+   physical_value, 0, 65533, 0.03125, -1536.0, "A" ;
+   logical_value, 65534, "Signal out of range" ;
+   logical_value, 65535, "Invalid" ;
+}
+I_BATT_LOW_Encoding {
+   physical_value, 0, 254, 0.1220703125, -15.625, "mA" ;
+}
+IBATT_QUIESCENT_Encoding {
+   physical_value, 0, 252, 0.00390625, 0.0, "A" ;
+   logical_value, 253, "Outside quiescent current range" ;
+   logical_value, 254, "Reserved" ;
+   logical_value, 255, "Invalid" ;
+}
+T_BATT_Encoding {
+   physical_value, 0, 145, 1.0, -40.0, "Degree C" ;
+   logical_value, 255, "Invalid" ;
+}
+Resp_Error_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error" ;
+}
+FLAG_INCONSTENCY_Encoding {
+   logical_value, 0, "No battery inconsistency" ;
+   logical_value, 1, "Battery inconsistency" ;
+}
+EBS_error_Encoding {
+   logical_value, 0, "No Error" ;
+   logical_value, 1, "Error" ;
+}
+FLAG_DISCONNECT_Encoding {
+   logical_value, 0, "No battery disconnection" ;
+   logical_value, 1, "Battery disconnection" ;
+}
+SOC_Encoding {
+   physical_value, 0, 100, 1.0, 0.0, "%" ;
+   logical_value, 255, "Signal invalid" ;
+}
+SOH_SUL_Encoding {
+   physical_value, 0, 100, 1.0, 0.0, "%" ;
+   logical_value, 255, "Signal invalid" ;
+}
+SOFV_StopEnable_Encoding {
+   physical_value, 0, 254, 0.0625, 0.0, "V" ;
+   logical_value, 255, "Signal invalid" ;
+}
+SOFV_Restart_Encoding {
+   physical_value, 0, 254, 0.0625, 0.0, "V" ;
+   logical_value, 255, "Signal invalid" ;
+}
+SOH_LAM_Encoding {
+   physical_value, 0, 508, 0.5, 0.0, "Ah" ;
+   logical_value, 255, "Signal invalid" ;
+}
+SOH_COR_Encoding {
+   physical_value, 0, 254, 0.0625, 0.0, "V" ;
+   logical_value, 255, "Signal invalid" ;
+}
+SOC_STATE_Encoding {
+   logical_value, 0, "deviation > 15%, " ;
+   logical_value, 1, "deviation < 15%" ;
+   logical_value, 2, "deviation < 10%" ;
+   logical_value, 3, "invalid" ;
+}
+SOH_SUL_STATE_Encoding {
+   logical_value, 0, "Not learned" ;
+   logical_value, 1, "Learned" ;
+   logical_value, 2, "Reserved" ;
+   logical_value, 3, "Signal invalid" ;
+}
+SOFV_StopEnableState_Encoding {
+   logical_value, 0, "inaccurate" ;
+   logical_value, 1, "accurate (deviation < 400mV)" ;
+   logical_value, 2, "Reserved" ;
+   logical_value, 3, "invalid" ;
+}
+SOFV_RestartState_Encoding {
+   logical_value, 0, "inaccurate" ;
+   logical_value, 1, "accurate (deviation < 400mV)" ;
+   logical_value, 2, "Reserved" ;
+   logical_value, 3, "invalid" ;
+}
+SOH_LAM_STATE_Encoding {
+   logical_value, 0, "Not learned at all" ;
+   logical_value, 1, "Learned at last once" ;
+   logical_value, 2, "Reserved" ;
+   logical_value, 3, "Signal invalid" ;
+}
+SOH_COR_STATE_Encoding {
+   logical_value, 0, "Not learned at all" ;
+   logical_value, 1, "Inaccurate" ;
+   logical_value, 2, "Accurate (deviation <400mV)" ;
+   logical_value, 3, "Signal invalid" ;
+}
+Q_Charge_Encoding {
+   physical_value, 0, 65534, 0.125, 0.0, "Ah" ;
+   logical_value, 65535, "Invalid" ;
+}
+Q_Discharge_Encoding {
+   physical_value, 0, 65534, 0.125, 0.0, "Ah" ;
+   logical_value, 65535, "Invalid" ;
+}
+}
+
+Signal_representation {
+RS_L_WiperSpeed_Encoding: RS_L_WiperSpeed ;
+RS_F_LightSensor_Encoding: RS_F_LightSensor ;
+RS_F_RainSensor_Encoding: RS_F_RainSensor ;
+RS_F_Communication_Encoding: RS_F_Communication ;
+RS_F_Voltage_Encoding: RS_F_Voltage ;
+RS_St_LampReq_Encoding: RS_St_LampReq ;
+RS_St_CurrentRain_Encoding: RS_St_CurrentRain ;
+RS_St_SplashCmd_Encoding: RS_St_SplashCmd ;
+RS_Sol_L_Encoding: RS_Sol_L ;
+RS_Sol_R_Encoding: RS_Sol_R ;
+RS_TunnelDetection_Encoding: RS_TunnelDetection ;
+RS_F_OpticalInitialization_Encoding: RS_F_OpticalInitialization ;
+RS_F_Temperature_Encoding: RS_F_Temperature ;
+RS_St_LightSensorActive_Encoding: RS_St_LightSensorActive ;
+RS_F_HUD_Sensor_Encoding: RS_F_HUD_Sensor ;
+RS_HUD_illuminance_Encoding: RS_HUD_illuminance ;
+ERR_ST_INTL_00_SZL_LIN_Encoding: ERR_ST_INTL_00_SZL_LIN ;
+ERR_ST_INTL_01_SZL_LIN_Encoding: ERR_ST_INTL_01_SZL_LIN ;
+ERR_ST_INTL_02_SZL_LIN_Encoding: ERR_ST_INTL_02_SZL_LIN ;
+ERR_ST_INTL_03_SZL_LIN_Encoding: ERR_ST_INTL_03_SZL_LIN ;
+ERR_ST_INTL_04_SZL_LIN_Encoding: ERR_ST_INTL_04_SZL_LIN ;
+ERR_ST_DRS_00_SZL_LIN_Encoding: ERR_ST_DRS_00_SZL_LIN ;
+ERR_ST_DRS_01_SZL_LIN_Encoding: ERR_ST_DRS_01_SZL_LIN ;
+ERR_ST_DRS_02_SZL_LIN_Encoding: ERR_ST_DRS_02_SZL_LIN ;
+ERR_ST_SWS_00_SZL_LIN_Encoding: ERR_ST_SWS_00_SZL_LIN ;
+ERR_ST_SWS_01_SZL_LIN_Encoding: ERR_ST_SWS_01_SZL_LIN ;
+ERR_ST_KRL_00_SZL_LIN_Encoding: ERR_ST_KRL_00_SZL_LIN ;
+ERR_ST_AIC_00_SZL_LIN_Encoding: ERR_ST_AIC_00_SZL_LIN ;
+ERR_ST_KRL_01_SZL_LIN_Encoding: ERR_ST_KRL_01_SZL_LIN ;
+ERR_ST_KL_SZL_LIN_Encoding: ERR_ST_KL_SZL_LIN ;
+ERR_ST_DIM_SZL_LIN_Encoding: ERR_ST_DIM_SZL_LIN ;
+OP_WISW_SZL_LIN_Encoding: OP_WISW_SZL_LIN ;
+OP_WIPO_SZL_LIN_Encoding: OP_WIPO_SZL_LIN ;
+COMM_ERR_SZL_LIN_Encoding: COMM_ERR_SZL_LIN ;
+OP_COLS_SZL_LIN_Encoding: OP_COLS_SZL_LIN ;
+NOD_ERR_SZL_LIN_Encoding: NOD_ERR_SZL_LIN ;
+ST_KL_SZL_LIN_Encoding: ST_KL_SZL_LIN ;
+CTR_LED_STWH_SZL_LIN_Encoding: CTR_LED_STWH_SZL_LIN ;
+CTR_LED_WI_SZL_LIN_Encoding: CTR_LED_WI_SZL_LIN ;
+CTR_WI_FN_SZL_LIN_Encoding: CTR_WI_FN_SZL_LIN ;
+BC_Button_Encoding: BC_Button ;
+WiperSensitivityInterval_Encoding: WiperSensitivityInterval ;
+WiperFront_Encoding: WiperFront ;
+WashMode_FW_Encoding: WashMode_FW ;
+STAT_Terminal_Encoding: STAT_Terminal ;
+Wiper_Parked_Low_Encoding: Wiper_Parked_Low ;
+Temperature_Encoding: Temperature ;
+VehicleSpeed_Encoding: VehicleSpeed ;
+U_BATT_Encoding: U_BATT ;
+I_BATT_High_Encoding: I_BATT_High ;
+I_BATT_LOW_Encoding: I_BATT_LOW ;
+IBATT_QUIESCENT_Encoding: IBATT_QUIESCENT ;
+T_BATT_Encoding: T_BATT ;
+Resp_Error_Encoding: Resp_Error ;
+FLAG_INCONSTENCY_Encoding: FLAG_INCONSTENCY ;
+EBS_error_Encoding: EBS_error ;
+FLAG_DISCONNECT_Encoding: FLAG_DISCONNECT ;
+SOC_Encoding: SOC ;
+SOH_SUL_Encoding: SOH_SUL ;
+SOFV_StopEnable_Encoding: SOFV_StopEnable ;
+SOFV_Restart_Encoding: SOFV_Restart ;
+SOH_LAM_Encoding: SOH_LAM ;
+SOH_COR_Encoding: SOH_COR ;
+SOC_STATE_Encoding: SOC_STATE ;
+SOH_SUL_STATE_Encoding: SOH_SUL_STATE ;
+SOFV_StopEnableState_Encoding: SOFV_StopEnableState ;
+SOFV_RestartState_Encoding: SOFV_RestartState ;
+SOH_LAM_STATE_Encoding: SOH_LAM_STATE ;
+SOH_COR_STATE_Encoding: SOH_COR_STATE ;
+Q_Charge_Encoding: Q_Charge ;
+Q_Discharge_Encoding: Q_Discharge ;
+}
